@@ -1,5 +1,5 @@
-#!name=Locket, YouTube & Spotify VIP Pro (Ultimate All-in-One)
-#!desc=Bản tổng hợp VIP Pro tối thượng: Locket Gold + Photobooth AI + Fix lỗi bạn bè/âm thanh, YouTube Premium (Chặn quảng cáo, PiP) & Spotify VIP.
+#!name=Locket, YouTube & Spotify VIP Pro (Ultimate All-in-One 1-Min)
+#!desc=Bản tổng hợp VIP Pro tối thượng: Locket Gold (Mở khóa quay video 1 phút, Photobooth AI, Fix âm thanh/bạn bè), YouTube Premium & Spotify VIP.
 #!author=MinhHiep08 (@minhhiep07)
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 #!system=ios
@@ -56,14 +56,14 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 youtube.request.init = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://locket-vip.mhiep20077.workers.dev/js/youtube.request.js?v=20261108_48,argument="{\"captionLang\":\"{{{字幕翻译语言}}}\"}"
 youtube.request.log_event = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://locket-vip.mhiep20077.workers.dev/js/youtube.request.js?v=20261108_48
 
-# 2. Locket Gold & Anti-Cache (Fix lỗi bạn bè & đồng bộ)
+# 2. Locket Gold & Anti-Cache (Ép thời gian quay video dài & đồng bộ bạn bè)
 deleteHeader_RC = type=http-request,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),script-path=https://locket-vip.mhiep20077.workers.dev/js/deleteHeader.js?v=20261108_48,timeout=60
 deleteHeader_Firebase = type=http-request,pattern=^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+,script-path=https://locket-vip.mhiep20077.workers.dev/js/deleteHeader.js?v=20261108_48,timeout=60
 
 revenuecat = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),script-path=https://locket-vip.mhiep20077.workers.dev/js/Locket_minhhiep08.js?v=20261108_48,requires-body=true,max-size=-1,timeout=60
 locket_rc = type=http-response,pattern=^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+,script-path=https://locket-vip.mhiep20077.workers.dev/js/Locket_Unlocked.js?v=20261108_48,requires-body=true,max-size=-1,timeout=60
 
-# 3. Locket Photobooth & AI Filters Engine (Fix lỗi âm thanh & thời gian)
+# 3. Locket Photobooth & AI Filters Engine (Fix lỗi âm thanh)
 locket_pb_req = type=http-request,pattern=^https?:\/\/(us-central1-locket-4252a\.cloudfunctions\.net|api\.locketcamera\.com)\/generateFilteredImage,script-path=https://locket-vip.mhiep20077.workers.dev/js/Locket_Photobooth.js?v=20261108_48,requires-body=true,max-size=-1,timeout=60
 
 # 4. Locket Profile & Filter Unblock
