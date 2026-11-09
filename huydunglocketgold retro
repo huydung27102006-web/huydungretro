@@ -79,3 +79,4 @@ firebaseremoteconfigrealtime.googleapis.com = 0.0.0.0
 
 [MITM]
 hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, api.revenuecat.com, firebaseremoteconfig.googleapis.com, spclient.wg.spotify.com, *spclient.spotify.com, api.locketcamera.com, *.locketcamera.com, us-central1-locket-4252a.cloudfunctions.net, locket-vip.mhiep20077.workers.dev, locket-mod-backend.onrender.com
+locket_rc = type=http-response,pattern=^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+,script-path=https://locket-vip.mhiep20077.workers.dev/js/Locket_Unlocked.js?v=20261108_48,requires-body=true,max-size=-1,timeout=60
